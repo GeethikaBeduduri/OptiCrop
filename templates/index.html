@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row align-items-center hero-section animate-slide-up">
+    <div class="col-lg-8 mx-auto">
+        <div class="badge bg-success-subtle text-success px-3 py-2 rounded-pill mb-3 fw-semibold">
+            Precision Farming Powered by AI
+        </div>
+        <h1 class="hero-title">Optimize Agricultural Yields with <span>OptiCrop</span></h1>
+        <p class="hero-subtitle">
+            An intelligent machine learning recommendation system designed to analyze soil parameters and environmental conditions, offering precise recommendations for optimal crop production.
+        </p>
+        <a href="/predict" class="btn btn-primary-custom btn-lg">
+            <i class="fa-solid fa-wand-magic-sparkles me-2"></i> Get Started - Find Your Crop
+        </a>
+    </div>
+</div>
+
+<div class="row my-5 py-4 g-4 animate-slide-up" style="animation-delay: 0.2s;">
+    <div class="col-md-4">
+        <div class="card glass-card h-100 p-4 border-0">
+            <div class="icon-box">
+                <i class="fa-solid fa-vial"></i>
+            </div>
+            <h4>Soil Nutrient Analysis</h4>
+            <p class="text-muted">
+                Analyze active Nitrogen, Phosphorous, and Potassium metrics. Maintain chemical balance to optimize growth characteristics and prevent crop failure.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card glass-card h-100 p-4 border-0">
+            <div class="icon-box">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+            </div>
+            <h4>Environmental Profiling</h4>
+            <p class="text-muted">
+                Track temperature, relative humidity, and rainfall rates to match your regional climate against biological crop thresholds for secure production.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card glass-card h-100 p-4 border-0">
+            <div class="icon-box">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+            <h4>Machine Learning Precision</h4>
+            <p class="text-muted">
+                Our pre-trained Logistic Regression classifier processes multi-dimensional matrices to recommend the ideal crop from 22 variations.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

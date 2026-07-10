@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row py-4 animate-slide-up">
+    <div class="col-lg-8 mx-auto">
+        <div class="card glass-card p-4 border-0">
+            <h2 class="fw-bold mb-3 text-success">
+                <i class="fa-solid fa-seedling me-2"></i>Find Your Optimal Crop
+            </h2>
+            <p class="text-muted mb-4">
+                Enter your localized soil nutrient concentrations and regional climatic parameters below. Our machine learning system will process the parameters and recommend the ideal crop.
+            </p>
+
+            <form action="/predict" method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-n"></i> Nitrogen (N)</label>
+                        <input type="number" step="any" min="0" max="200" name="N" class="form-control form-control-custom" placeholder="e.g. 80" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-p"></i> Phosphorous (P)</label>
+                        <input type="number" step="any" min="0" max="200" name="P" class="form-control form-control-custom" placeholder="e.g. 45" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-k"></i> Potassium (K)</label>
+                        <input type="number" step="any" min="0" max="300" name="K" class="form-control form-control-custom" placeholder="e.g. 40" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-temperature-half"></i> Temperature (°C)</label>
+                        <input type="number" step="any" min="-10" max="60" name="temperature" class="form-control form-control-custom" placeholder="e.g. 25.5" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-droplet"></i> Humidity (%)</label>
+                        <input type="number" step="any" min="0" max="100" name="humidity" class="form-control form-control-custom" placeholder="e.g. 80" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label-custom"><i class="fa-solid fa-vial-circle-check"></i> Soil pH</label>
+                        <input type="number" step="any" min="0" max="14" name="ph" class="form-control form-control-custom" placeholder="e.g. 6.5" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label-custom"><i class="fa-solid fa-cloud-showers-water"></i> Rainfall (mm)</label>
+                        <input type="number" step="any" min="0" max="1000" name="rainfall" class="form-control form-control-custom" placeholder="e.g. 202.4" required>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                        <i class="fa-solid fa-magnifying-glass-chart me-2"></i> Predict Recommended Crop
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        {% if prediction_text %}
+        <div class="result-card">
+            <div class="icon-box mx-auto" style="width: 80px; height: 80px; font-size: 2.2rem;">
+                <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+            <h3 class="result-title">{{ prediction_text }}</h3>
+            <p class="text-success-emphasis mb-0 mt-2 fw-semibold">
+                This crop is best suited based on your soil conditions and regional environmental readings.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

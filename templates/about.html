@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row py-5 animate-slide-up">
+    <div class="col-lg-10 mx-auto">
+        <h2 class="mb-4 fw-bold text-success"><i class="fa-solid fa-circle-info me-2"></i>About the OptiCrop System</h2>
+        <p class="lead text-muted">
+            OptiCrop is an agricultural advisory platform leveraging predictive machine learning models to help farmers maximize crop productivity through scientific decision support.
+        </p>
+        
+        <hr class="my-4" style="opacity: 0.15;">
+        
+        <h4 class="fw-bold mb-4">Core Recommendation Parameters</h4>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-n me-2 text-success"></i>Nitrogen (N)</h5>
+                    <p class="small text-muted mb-0">Crucial for vegetative growth, leaf development, and chlorophyll production. High nitrogen yields strong, healthy green leaves.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-p me-2 text-success"></i>Phosphorous (P)</h5>
+                    <p class="small text-muted mb-0">Drives root development, flowering, and seed formation. Essential for early stage crop establishment.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-k me-2 text-success"></i>Potassium (K)</h5>
+                    <p class="small text-muted mb-0">Improves disease resistance, water utilization efficiency, and crop quality. Critical for heavy feed crops.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-temperature-half me-2 text-success"></i>Temperature</h5>
+                    <p class="small text-muted mb-0">Dictates enzymatic activity and cellular metabolic rates within the plant, guiding seasonal suitability.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-droplet me-2 text-success"></i>Humidity</h5>
+                    <p class="small text-muted mb-0">Affects transpiration rates, gas exchange, and vulnerability to fungal pathogenetic spread.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card glass-card p-3 border-0 h-100">
+                    <h5 class="fw-bold"><i class="fa-solid fa-vial-circle-check me-2 text-success"></i>Soil pH</h5>
+                    <p class="small text-muted mb-0">Determines soil nutrient availability and solubility. A neutral-to-slight acidic range is standard.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 p-4 glass-card border-0">
+            <h5 class="fw-bold text-success"><i class="fa-solid fa-bolt me-2"></i>How it Works</h5>
+            <p class="mb-0">
+                Using supervised machine learning, the system correlates the seven parameters against historical records of 22 distinct crop types. Logistic Regression builds linear probability boundaries across this seven-dimensional space, returning the most ecologically aligned recommendation with the lowest probability of crop failure.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
